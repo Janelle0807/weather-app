@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheCodes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <link rel="stylesheet" href="src/styles.css" />
+  <body>
+    <div class="container">
+      <p class="today" id="date-today"></p>
+      <div class="row">
+        <div class="col -6">
+          <form id="search-form">
+            <input
+              type="text"
+              placeholder="Search using City name"
+              autocomplete="off"
+              autofocus="on"
+              id="search-text-input"
+						/>
+					
+            <input type="submit" value="Search" class="btn btn-primary" />
+					
+            <div class="col -3">
+              <button class="btn btn-success" id="current-location">
+                Current location
+              </button>
+						</div>
+					
+          </form>
+        
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title" id="city"></h5>
+                <p class="card-text" id="day-of-the-week"></p>
+                <p class="card-text" id="time-now"></p>
+                <p class="card-text-temp" id="temp-now"></p>
+                <p class="card-text-temp" id="weather"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text-other" id="high">High: 33 ℃</p>
+                <p class="card-text-other" id="low">Low: 24 ℃</p>
+                <p class="card-text-other" id="humidity">Humidity: 70%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h5> <a href="https://github.com/Janelle0807/weather-app">Open-source code</a> 
+          
+          by Janelle </h5>
+          
+        <br />
+        <p class="forecast">Weather in the next 5 days</p>
+
+        <div class="row">
+          <div class="col -2">
+            <strong>Aug 16</strong> <br />
+            <span class="emoji">☀️ </span>30℃
+          </div>
+          <div class="col -2">
+            <strong>Aug 17</strong> <br />
+            <span class="emoji">🌥 </span> 25℃
+          </div>
+          <div class="col -2">
+            <strong>Aug 18</strong> <br />
+            <span class="emoji">🌤 </span>28℃
+          </div>
+          <div class="col -2">
+            <strong>Aug 19</strong> <br />
+            <span class="emoji">⛈ </span>23℃
+          </div>
+          <div class="col -2">
+            <strong>Aug 20</strong> <br />
+            <span class="emoji">🌧 </span> 22℃
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
