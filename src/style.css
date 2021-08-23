@@ -1,0 +1,81 @@
+.container {
+  font-family: "Varela Round", sans-serif;
+  display: block;
+  width: 100%;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 850px;
+  border: 1px solid #7F7C82;
+  border-radius: 10px;
+  background-color: #93B5C6;
+}
+.today {
+  display: block;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+
+.card-body {
+  line-height: 15px;
+}
+.card {
+  border-style: none;
+  border-radius: 10px;
+  background-color: #FFE3E3;
+  margin: 20px auto;
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: bolder;
+  margin: 10px auto;
+}
+
+.card-text-day {
+  font-size: 24px;
+  font-weight: bolder;
+  margin: 10px auto;
+}
+
+.card-text-time {
+  font-size: 24px;
+  font-weight: bolder;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.card-text-temp {
+  font-size: 50px;
+  font-weight: bolder;
+  margin: 20px auto;
+  padding: 20px 0;
+}
+
+.unit {
+  position: relative;
+  top: -25px;
+}
+
+.card-text-weather {
+  font-size: 25px;
+  font-weight: bolder;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.emoji {
+  font-size: 22px;
+}
+.card-text-other {
+  color: #753422;
+}
+.forecast {
+  line-height: 10px;
+  font-size: 20px;
+  text-decoration: underline;
+  color: #141e61;
+}

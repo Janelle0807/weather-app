@@ -49,18 +49,10 @@ function search(city) {
   axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature);
 }
 
-function searchCityTemp(event) {
-  event.preventDefault();
-  let city = document.querySelector("#search-text-input").value;
-  search(city);
-}
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", searchCityTemp);
-
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temp = document.querySelector("#temp-now");
-  temp.innerHTML = `${temperature}℃`;
+  temp.innerHTML = `${temperature}`;
 
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
@@ -78,6 +70,22 @@ function showTemperature(response) {
   low.innerHTML = `Low: ${lowTemp}℃`;
 
   document.querySelector("#city").innerHTML = response.data.name;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+  celsiusTemperature = response.data.main.temp;
+  
+}
+
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCityTemp);
+
+function searchCityTemp(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search-text-input").value;
+  search(city);
 }
 
 search("Tokyo");
@@ -88,10 +96,33 @@ function showPosition(position) {
   axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature);
 }
 
+
+let currentLoc = document.querySelector("#current-location");
+currentLoc.addEventListener("click", getCurrentLocation);
+
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let currentLoc = document.querySelector("#current-location");
-currentLoc.addEventListener("click", getCurrentLocation);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheittemp);
+
+
+
+function showFahrenheittemp (event) {
+  event.preventDefault();
+  let fahrenheitTemp = (5 * 9) / 5 + 32;
+  let temp = document.querySelector("#temp-now");
+  temp.innerHTML = Math.round(fahrenheitTemp);
+  
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiustemp);
+
+function displayCelsiustemp(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#temp-now");
+  temp.innerHTML = Math.round(celsiusTemperature);
+}

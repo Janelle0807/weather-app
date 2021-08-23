@@ -18,30 +18,35 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
-  <link rel="stylesheet" href="src/styles.css" />
+  <link rel="stylesheet" href="src/style.css" />
   <body>
     <div class="container">
       <p class="today" id="date-today"></p>
-      <div class="row">
-        <div class="col -6">
-          <form id="search-form">
+      
+      <form id="search-form">
+        <div class="row">
+          <div class="col-md-6">
             <input
-              type="text"
+              type="search"
               placeholder="Search using City name"
               autocomplete="off"
               autofocus="on"
-              id="search-text-input"
-						/>
-					
+              class="form-control"
+              id="search-text-input"/>
+          </div>
+        
+          <div class="col-md-auto">
             <input type="submit" value="Search" class="btn btn-primary" />
-					
-            <div class="col -3">
-              <button class="btn btn-success" id="current-location">
+          </div>
+        
+            <div class="col-md-auto">
+          <span class="btn btn-success" id="current-location">
                 Current location
-              </button>
-						</div>
-					
-          </form>
+          </span>
+          </div>
+          </div>
+      </form>
+      
         
 
         <div class="row">
@@ -49,10 +54,21 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title" id="city"></h5>
-                <p class="card-text" id="day-of-the-week"></p>
-                <p class="card-text" id="time-now"></p>
-                <p class="card-text-temp" id="temp-now"></p>
-                <p class="card-text-temp" id="weather"></p>
+                <p class="card-text-day" id="day-of-the-week"></p>
+                <p class="card-text-time" id="time-now"></p>
+                
+                <div class="clearfix weather-temperature">
+                  <img src="" alt="Clear" id="icon" class="float-left"/>
+          
+                <span class="card-text-temp" id="temp-now"></span>
+                <span class="unit">
+                  <a href="#" id="celsius-link">°C</a>
+                   | 
+                  <a href="#" id="fahrenheit-link">°F</a> 
+                   </span>
+                
+                </div>
+                <p class="card-text-weather" id="weather"></p>
               </div>
             </div>
           </div>
@@ -96,9 +112,7 @@
             <span class="emoji">🌧 </span> 22℃
           </div>
         </div>
-      </div>
-    </div>
-
+        </div>
     <script src="src/index.js"></script>
   </body>
 </html>
