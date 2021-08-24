@@ -55,6 +55,8 @@ button {
   padding: 20px 0;
 }
 
+
+
 .unit {
   position: relative;
   top: -25px;
@@ -78,4 +80,14 @@ button {
   font-size: 20px;
   text-decoration: underline;
   color: #141e61;
+}
+
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
