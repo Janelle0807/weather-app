@@ -3,7 +3,7 @@
   display: block;
   width: 100%;
   padding: 30px;
-  margin: 40px auto;
+  margin: 40px auto 10px;
   max-width: 850px;
   border: 1px solid #7F7C82;
   border-radius: 10px;
@@ -78,7 +78,6 @@ button {
 .forecast {
   line-height: 10px;
   font-size: 20px;
-  text-decoration: underline;
   color: #141e61;
 }
 
@@ -90,4 +89,14 @@ button {
 
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast-temp-min {
+  opacity: 0.5;
+}
+
+small {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
 }

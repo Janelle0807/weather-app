@@ -129,3 +129,28 @@ function displayCelsiustemp(event) {
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#fivedayforecast");
+  
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+  
+    forecastHTML = forecastHTML +
+      `<div class="col -2">
+            <div class="weather-forecast-day">
+            ${day}
+            </div>
+            <div class="weather-forecast-temp">
+              <span class="weather-forecast-temp-max">18°</span>
+              <span class="weather-forecast-temp-min">12°</span>
+            </div>
+          </div> `;
+  });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML; 
+}
+  
+  
+displayForecast();
