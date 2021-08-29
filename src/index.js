@@ -76,6 +76,7 @@ function showTemperature(response) {
 
   celsiusTemperature = response.data.main.temp;
   
+  getForecast(response.data.coord);
 }
 
 
@@ -130,27 +131,47 @@ function displayCelsiustemp(event) {
   fahrenheitLink.classList.remove("active");
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#fivedayforecast");
-  
+  let forecast = response.data.daily;
   let forecastHTML = `<div class="row">`;
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function (day) {
-  
-    forecastHTML = forecastHTML +
-      `<div class="col -2">
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML = forecastHTML +
+        `<div class="col -2">
             <div class="weather-forecast-day">
-            ${day}
+            ${formatDay(forecastDay.dt)}
             </div>
+            <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="43" />
             <div class="weather-forecast-temp">
-              <span class="weather-forecast-temp-max">18°</span>
-              <span class="weather-forecast-temp-min">12°</span>
+              <span class="weather-forecast-temp-max">${Math.round(forecastDay.temp.max)}°</span>
+              <span class="weather-forecast-temp-min">${Math.round(forecastDay.temp.min)}°</span>
             </div>
           </div> `;
+    }
   });
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML; 
 }
-  
+
+function getForecast(coordinates) {
+  let apiKey = "f5ed26972e5986fc6b40a4de3aefdb48";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+  return days[day];
+}
+
+
+
   
 displayForecast();
+
