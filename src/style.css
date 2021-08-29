@@ -7,11 +7,14 @@
   max-width: 850px;
   border: 1px solid #7F7C82;
   border-radius: 10px;
-  background-color: #93B5C6;
+  background-color: #CDF0EA;
+  
 }
 .today {
   display: block;
   font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+  
 }
 
 button {
@@ -25,7 +28,7 @@ button {
 .card {
   border-style: none;
   border-radius: 10px;
-  background-color: #FFE3E3;
+  
   margin: 20px auto;
 }
 
@@ -35,10 +38,16 @@ button {
   margin: 10px auto;
 }
 
+h5 {
+  font-family: font-family: 'Source Sans Pro', sans-serif;
+  
+}
+
 .card-text-day {
   font-size: 24px;
   font-weight: bolder;
   margin: 10px auto;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .card-text-time {
@@ -46,6 +55,7 @@ button {
   font-weight: bolder;
   margin: 10px auto;
   padding: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .card-text-temp {
@@ -53,6 +63,7 @@ button {
   font-weight: bolder;
   margin: 20px auto;
   padding: 20px 0;
+
 }
 
 
@@ -67,6 +78,7 @@ button {
   font-weight: bolder;
   margin: 10px auto;
   padding: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .emoji {
@@ -79,6 +91,11 @@ button {
   line-height: 10px;
   font-size: 20px;
   color: #141e61;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.weather-forecast {
+  font-family: 'Quicksand', sans-serif;
 }
 
 .weather-temperature .active {
