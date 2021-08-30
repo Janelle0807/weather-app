@@ -93,30 +93,7 @@ search("Tokyo");
 
 
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheittemp);
 
-
-
-function showFahrenheittemp (event) {
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  let temp = document.querySelector("#temp-now");
-  temp.innerHTML = Math.round(fahrenheitTemp);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiustemp);
-
-function displayCelsiustemp(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp-now");
-  temp.innerHTML = Math.round(celsiusTemperature);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#fivedayforecast");
