@@ -91,20 +91,7 @@ function searchCityTemp(event) {
 
 search("Tokyo");
 
-function showPosition(position) {
-  let apiKey = "f5ed26972e5986fc6b40a4de3aefdb48";
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.lat}&lon=${position.coords.lon}&units=metric`;
-  axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature);
-}
 
-
-let currentLoc = document.querySelector("#current-location");
-currentLoc.addEventListener("click", getCurrentLocation);
-
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheittemp);
